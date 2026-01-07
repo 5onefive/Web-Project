@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Technology & Cloud Computing</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Internet Technology & Cloud Computing</h1>
+    <p>
+        This interactive web page demonstrates how internet technologies,
+        data transmission methods, and cloud computing work together to
+        power modern web applications.
+    </p>
+</header>
+
+<section>
+    <h2>🌐 Internet Technology: DNS</h2>
+    <p>
+        The <strong>Domain Name System (DNS)</strong> acts like the internet’s phonebook.
+        Humans use domain names such as <em>www.google.com</em>, but computers communicate
+        using numerical IP addresses.
+    </p>
+    <p>
+        When a URL is entered, DNS translates the domain name into an IP address,
+        allowing routers to locate the correct server and deliver data.
+    </p>
+</section>
+
+<section>
+    <h2>📡 Broadband Connection</h2>
+    <p>
+        <strong>Fiber-optic broadband</strong> transmits data using light through optical
+        fibers, providing high speed, low latency, and reliability.
+    </p>
+
+    <table>
+        <tr>
+            <th>Technology</th>
+            <th>Speed</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>USB</td>
+            <td>Up to 5 Gbps</td>
+            <td>Local data transfer</td>
+        </tr>
+        <tr>
+            <td>Broadband</td>
+            <td>100 Mbps – 1 Gbps</td>
+            <td>Internet communication</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>🔄 Data Transmission (Full-Duplex)</h2>
+    <p>
+        Full-duplex transmission allows data to be sent and received
+        simultaneously, such as in video calls.
+    </p>
+
+    <div class="diagram">
+        <div class="box">Sender</div>
+        <div class="arrow">⇄</div>
+        <div class="box">Receiver</div>
+    </div>
+
+    <p>
+        Error-checking methods like checksums ensure that transmitted data
+        arrives accurately without corruption.
+    </p>
+
+    <button onclick="checkData()">Run Error Check</button>
+</section>
+
+<section>
+    <h2>☁️ Cloud Integration</h2>
+    <p>
+        Cloud storage saves data on remote servers accessed via the internet,
+        while traditional storage relies on local physical devices.
+    </p>
+    <p>
+        Cloud solutions provide scalability, accessibility, and automatic
+        backups, making them ideal for modern web applications.
+    </p>
+
+    <button onclick="showCloudMessage()">Why Cloud?</button>
+</section>
+
+<footer>
+    <p>Built using HTML, CSS & JavaScript | Internet Technology Project</p>
+</footer>
+
+<!-- External JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
