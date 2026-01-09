@@ -1,8 +1,7 @@
 /* =========================
    STYLE.CSS
    Internet Technology & Cloud Computing Project
-   Shooting Stars Background adapted from:
-   https://prismic.io/blog/css-background-effects
+   Combined Background & Formatting
 ============================= */
 * {
   margin: 0;
@@ -17,8 +16,10 @@ body {
   background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
   color: white;
   overflow-x: hidden;
+  position: relative;
 }
 
+/* ===== CONTENT ===== */
 .content {
   position: relative;
   z-index: 2;
@@ -26,6 +27,7 @@ body {
   margin: auto;
   padding: 40px 20px;
 }
+
 /* ===== CONTENT STYLING ===== */
 header {
   text-align: center;
@@ -108,9 +110,8 @@ footer {
   opacity: 0.8;
 }
 
-
 /* =========================
-   BACKGROUND STARS
+   BACKGROUND STARS & SHOOTING STARS
 ============================= */
 .stars {
   width: 100%;
@@ -147,5 +148,3 @@ footer {
   10% { opacity: 1; }
   100% { transform: translateY(1000px) translateX(-500px) rotate(-45deg); opacity: 0; }
 }
-
-
