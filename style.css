@@ -1,8 +1,8 @@
 /* =========================
    STYLE.CSS
    Internet Technology & Cloud Computing Project
-   Clean Combined Version
 ============================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -19,16 +19,52 @@ body {
   position: relative;
 }
 
+/* ===== STARS ===== */
+.stars {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  background: transparent;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 2px 2px;
+}
+
+/* ===== SHOOTING STARS ===== */
+.shooting-star {
+  position: fixed;
+  top: -100px;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(white, transparent);
+  transform: rotate(-45deg);
+  animation: shoot 3s linear infinite;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.shooting-star:nth-child(2) { animation-delay: 1s; left: 20%; height: 100px; }
+.shooting-star:nth-child(3) { animation-delay: 2s; left: 75%; height: 120px; }
+.shooting-star:nth-child(4) { animation-delay: 3s; left: 40%; height: 90px; }
+.shooting-star:nth-child(5) { animation-delay: 4s; left: 10%; height: 110px; }
+
+@keyframes shoot {
+  0% { transform: translateY(0) translateX(0) rotate(-45deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(1000px) translateX(-500px) rotate(-45deg); opacity: 0; }
+}
+
 /* ===== CONTENT ===== */
 .content {
   position: relative;
-  z-index: 10; /* make sure content is above stars */
+  z-index: 10;
   max-width: 1000px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* ===== CONTENT STYLING ===== */
 header {
   text-align: center;
   margin-bottom: 50px;
@@ -108,44 +144,4 @@ th, td {
 footer {
   text-align: center;
   opacity: 0.8;
-}
-
-/* =========================
-   BACKGROUND STARS
-============================= */
-.stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; /* behind everything */
-  background: transparent;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 2px 2px;
-}
-
-/* ===== SHOOTING STARS ===== */
-.shooting-star {
-  position: absolute;
-  width: 2px;
-  height: 80px;
-  background: linear-gradient(white, transparent);
-  top: -100px;
-  left: 50%;
-  transform: rotate(-45deg);
-  animation: shoot 3s linear infinite;
-  opacity: 0.8;
-  z-index: 1;
-}
-
-.shooting-star:nth-child(2) { animation-delay: 1s; left: 20%; height: 100px; }
-.shooting-star:nth-child(3) { animation-delay: 2s; left: 75%; height: 120px; }
-.shooting-star:nth-child(4) { animation-delay: 3s; left: 40%; height: 90px; }
-.shooting-star:nth-child(5) { animation-delay: 4s; left: 10%; height: 110px; }
-
-@keyframes shoot {
-  0% { transform: translateY(0) rotate(-45deg); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(1000px) translateX(-500px) rotate(-45deg); opacity: 0; }
 }
