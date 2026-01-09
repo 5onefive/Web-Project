@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Internet Technology and Cloud Computing</title>
+  <title>Internet Technology & Cloud Computing Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Modern Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Background -->
+  <!-- Background Animation -->
   <div class="stars"></div>
   <div class="shooting-star"></div>
   <div class="shooting-star"></div>
@@ -21,77 +24,91 @@
   <main class="content">
 
     <header>
-      <h1>Internet Technologies, Data Transmission and Cloud Computing</h1>
+      <h1>Internet Technology, Data Transmission & Cloud Computing</h1>
       <p>
-        This webpage demonstrates core internet technologies, data transmission methods,
-        and cloud computing concepts. It integrates structured research with HTML, CSS,
-        and JavaScript to explain how information travels across networks and how cloud
-        platforms support modern web applications.
+        This interactive webpage demonstrates how core internet technologies operate
+        behind the scenes. It explores DNS resolution, broadband connectivity, data
+        transmission methods, error-checking techniques, and cloud computing models,
+        integrating theory with visual design and JavaScript-based interactivity.
       </p>
     </header>
 
+    <!-- ================= DNS SECTION ================= -->
     <section>
-      <h2>Internet Technology and DNS</h2>
+      <h2>1. Internet Technology: DNS and URL Resolution</h2>
+
       <p>
-        The Domain Name System, commonly known as DNS, allows users to access websites
-        using readable domain names instead of numerical IP addresses. When a user
-        types a URL into a browser, the request is sent to a DNS server which translates
-        the domain name into its corresponding IP address.
+        The <strong>Domain Name System (DNS)</strong> is often described as the internet’s
+        phonebook. While users access websites using readable domain names such as
+        <em>www.onlinegames.co.uk</em>, computers communicate using numerical
+        <strong>IP addresses</strong>. DNS bridges this gap by translating domain names
+        into IP addresses.
       </p>
+
       <p>
-        If the local DNS server does not already have the record, the request is passed
-        through a hierarchy of DNS servers including ISP servers, top level domain
-        servers, and root servers. Once the correct IP address is found, routers deliver
-        the data packet to the correct web server.
+        When a user enters a URL into a browser, the request is sent to a DNS server.
+        If the server does not recognize the domain, it forwards the request up the DNS
+        hierarchy, through ISP servers and top-level domain servers, until the correct IP
+        address is found or the root server is reached. Once resolved, routers use the IP
+        address to deliver the data packet to the correct web server.
       </p>
-      <button onclick="dnsJourney()">Simulate DNS Lookup</button>
+
+      <p>
+        This hierarchical DNS system allows websites to change physical servers without
+        affecting users, improves scalability, and removes the need for memorizing long
+        numerical addresses.
+      </p>
+
+      <button onclick="dnsJourney()">Simulate DNS Journey</button>
     </section>
 
+    <!-- ================= BROADBAND SECTION ================= -->
     <section>
-      <h2>Broadband and Data Transmission</h2>
+      <h2>2. Broadband and Data Transmission Technologies</h2>
+
       <p>
-        Broadband is a high speed internet connection that allows continuous data
-        transmission. Fiber optic broadband transmits data using light signals through
-        glass cables, enabling high bandwidth, low latency, and long distance
-        communication with minimal interference.
+        <strong>Broadband</strong> refers to high-speed internet connections that enable
+        continuous data transmission over long distances. Modern broadband technologies
+        include fiber-optic, DSL, cable, and wireless networks. Fiber-optic broadband is
+        especially effective because it transmits data as light signals, providing high
+        bandwidth, low latency, and resistance to electromagnetic interference.
       </p>
+
       <p>
-        Data transmission methods are classified as simplex, half duplex, or full
-        duplex. Full duplex transmission allows data to be sent and received at the
-        same time, making it ideal for applications such as video calls and online
-        gaming.
+        Data transmission technologies are classified by direction (simplex,
+        half-duplex, or full-duplex), method (serial or parallel), and synchronization
+        (asynchronous or synchronous). These design choices depend on factors such as
+        distance, required speed, noise, cost, and compatibility.
       </p>
 
       <table>
         <tr>
           <th>Technology</th>
-          <th>Typical Speed</th>
-          <th>Usage</th>
+          <th>Speed</th>
+          <th>Primary Use</th>
         </tr>
         <tr>
           <td>USB</td>
           <td>Up to 5 Gbps</td>
-          <td>Short distance serial communication</td>
+          <td>Local serial data transfer</td>
         </tr>
         <tr>
           <td>Fiber Broadband</td>
-          <td>100 Mbps to 1 Gbps</td>
-          <td>Internet connectivity</td>
+          <td>100 Mbps – 1+ Gbps</td>
+          <td>Long-distance internet communication</td>
         </tr>
       </table>
     </section>
 
+    <!-- ================= DATA TRANSMISSION ================= -->
     <section>
-      <h2>Data Transmission and Error Checking</h2>
+      <h2>3. Data Transmission and Error Checking</h2>
+
       <p>
-        During data transmission, errors may occur due to noise, interference, or signal
-        degradation. Error checking methods are used to detect and correct these issues
-        to ensure data integrity.
-      </p>
-      <p>
-        Common error checking techniques include parity bits, checksums, and cyclic
-        redundancy checks. These methods allow the receiving device to detect corrupted
-        data and request retransmission when necessary.
+        <strong>Full-duplex transmission</strong> allows data to be sent and received
+        simultaneously, making it essential for real-time communication such as video
+        calls and online gaming. Unlike simplex or half-duplex systems, both endpoints
+        can transmit without waiting.
       </p>
 
       <div class="diagram">
@@ -100,35 +117,82 @@
         <div class="box">Receiver</div>
       </div>
 
-      <button onclick="checkTransmission()">Check Data Integrity</button>
+      <p>
+        During transmission, errors may occur due to noise, signal degradation, or timing
+        issues. Error-checking methods such as <strong>parity bits</strong>,
+        <strong>checksums</strong>, and <strong>automatic repeat request (ARQ)</strong>
+        are used to detect corrupted data and ensure integrity. Stronger techniques such
+        as CRC and forward error correction are used in noisy or high-latency networks.
+      </p>
+
+      <button onclick="checkTransmission()">Test Error Checking</button>
     </section>
 
+    <!-- ================= CLOUD COMPUTING ================= -->
     <section>
-      <h2>Cloud Computing and Storage</h2>
+      <h2>4. Cloud Computing and Web Applications</h2>
+
       <p>
-        Cloud computing provides on demand access to computing resources such as storage,
-        processing power, and databases over the internet. Unlike traditional storage,
-        cloud storage does not rely on a single local device.
+        <strong>Cloud computing</strong> delivers services such as storage, databases,
+        and processing power over the internet instead of relying on local hardware.
+        Cloud platforms host applications on remote servers that clients access through
+        browsers or apps.
       </p>
+
       <p>
-        Client side technologies such as HTML, CSS, and JavaScript run in the browser,
-        while server side systems operate in the cloud. This separation allows web
-        applications to scale efficiently and support multiple users.
+        In web development, <strong>client-side technologies</strong> (HTML, CSS,
+        JavaScript) execute in the browser, while <strong>server-side systems</strong>
+        run in the cloud, handling databases, authentication, and large-scale processing.
+        This separation improves scalability, reliability, and collaboration.
       </p>
-      <button onclick="cloudVsLocal()">Compare Storage Models</button>
+
+      <p>
+        Compared to traditional storage, cloud solutions offer automatic backups,
+        global access, cost efficiency, and rapid scaling, but they require internet
+        connectivity and strong security practices under a shared-responsibility model.
+      </p>
+
+      <button onclick="cloudVsLocal()">Compare Storage</button>
     </section>
 
+    <!-- ================= WORKS CITED ================= -->
     <section>
-      <h2>Works Cited</h2>
-      <p>Teach Computer Science. Internet Technologies. teachcomputerscience.com/gcse/networking/internet-technologies/</p>
-      <p>Save My Exams. Data Transmission Revision Notes. savemyexams.com</p>
-      <p>Save My Exams. Universal Serial Bus USB. savemyexams.com</p>
-      <p>Gcore. Data Transmission Guide. gcore.com</p>
-      <p>Prismic. CSS Background Effects. prismic.io</p>
+      <h2>Works Cited (MLA 9)</h2>
+
+      <p>
+        Hampton, Robert, and James Woodhouse. “Data Transmission (Cambridge (CIE) IGCSE
+        Computer Science): Revision Note.” <em>Save My Exams</em>, 16 Sept. 2025,
+        www.savemyexams.com/igcse/computer-science/cie/23/revision-notes/2-data-transmission/types-and-methods-of-data-transmission/data-transmission/.
+      </p>
+
+      <p>
+        “What Is Data Transmission | Everything You Need to Know.” <em>Gcore</em>,
+        4 Apr. 2023, gcore.com/learning/data-transmission-guide-everything-you-need-to-know.
+      </p>
+
+      <p>
+        “Universal Serial Bus (USB) – Revision Note.” <em>Save My Exams</em>,
+        7 Feb. 2025,
+        www.savemyexams.com/igcse/computer-science/cie/23/revision-notes/2-data-transmission/types-and-methods-of-data-transmission/universal-serial-bus-usb/.
+      </p>
+
+      <p>
+        Teach Computer Science. “Internet Technologies (GCSE Computer Science).”
+        <em>Teach Computer Science</em>,
+        teachcomputerscience.com/gcse/networking/internet-technologies/.
+      </p>
+
+      <p>
+        Prismic. “CSS Background Effects.” <em>Prismic Blog</em>,
+        prismic.io/blog/css-background-effects.
+      </p>
     </section>
 
     <footer>
-      <p>HTML CSS JavaScript Internet Technology Project</p>
+      <p>
+        Internet Technology Project | HTML • CSS • JavaScript  
+        <br>Research-based and rubric-aligned
+      </p>
     </footer>
 
   </main>
