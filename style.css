@@ -1,8 +1,3 @@
-/* =========================
-   STYLE.CSS
-   Internet Technology & Cloud Computing Project
-============================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -16,55 +11,52 @@ body {
   background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
   color: white;
   overflow-x: hidden;
-  position: relative;
 }
 
-/* ===== STARS ===== */
-.stars {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -2;
-  background: transparent;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 2px 2px;
-}
-
-/* ===== SHOOTING STARS ===== */
-.shooting-star {
-  position: fixed;
-  top: -100px;
-  width: 2px;
-  height: 80px;
-  background: linear-gradient(white, transparent);
-  transform: rotate(-45deg);
-  animation: shoot 3s linear infinite;
-  opacity: 0.8;
-  z-index: -1;
-}
-
-.shooting-star:nth-child(2) { animation-delay: 1s; left: 20%; height: 100px; }
-.shooting-star:nth-child(3) { animation-delay: 2s; left: 75%; height: 120px; }
-.shooting-star:nth-child(4) { animation-delay: 3s; left: 40%; height: 90px; }
-.shooting-star:nth-child(5) { animation-delay: 4s; left: 10%; height: 110px; }
-
-@keyframes shoot {
-  0% { transform: translateY(0) translateX(0) rotate(-45deg); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(1000px) translateX(-500px) rotate(-45deg); opacity: 0; }
-}
-
-/* ===== CONTENT ===== */
 .content {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   max-width: 1000px;
   margin: auto;
   padding: 40px 20px;
 }
 
+/* ===== STARS (YOUR CODE) ===== */
+.stars {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  background: white;
+  box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+    22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+    38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+    53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+    68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+    83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+    98vw 35vh 2px white;
+  animation: twinkle 8s infinite linear;
+}
+
+@keyframes twinkle {
+  0%,100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
+/* ===== SHOOTING STARS ===== */
+.shooting-star {
+  position: absolute;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shoot 3s infinite ease-in;
+}
+
+@keyframes shoot {
+  0% { transform: translateX(-100px); opacity: 1; }
+  100% { transform: translateX(120vw); opacity: 0; }
+}
+
+/* ===== CONTENT STYLING ===== */
 header {
   text-align: center;
   margin-bottom: 50px;
