@@ -4,16 +4,110 @@
    Shooting Stars Background adapted from:
    https://prismic.io/blog/css-background-effects
 ============================= */
-
-/* General body styles */
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Inter', sans-serif;
-  background-color: #0b0c1e; /* dark night sky */
-  color: #e0e0e0;
+}
+
+/* ===== BACKGROUND ===== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+  color: white;
   overflow-x: hidden;
 }
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+/* ===== CONTENT STYLING ===== */
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+section {
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #ffd36a;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ffd36a, #ff9f43);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== DIAGRAM ===== */
+.diagram {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.box {
+  background: rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 12px;
+  width: 150px;
+  text-align: center;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: #ffd36a;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  opacity: 0.8;
+}
+
 
 /* =========================
    BACKGROUND STARS
@@ -54,134 +148,4 @@ body {
   100% { transform: translateY(1000px) translateX(-500px) rotate(-45deg); opacity: 0; }
 }
 
-/* =========================
-   MAIN CONTENT STYLES
-============================= */
-.content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem;
-}
 
-/* Header */
-header h1 {
-  font-size: 3rem;
-  color: #f9d342; /* golden */
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 2rem auto;
-}
-
-/* Sections */
-section {
-  margin-bottom: 3rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-section h2 {
-  font-size: 2rem;
-  color: #00e5ff; /* cyan */
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #00e5ff;
-  padding-bottom: 0.5rem;
-}
-
-section p {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-table, th, td {
-  border: 1px solid #00e5ff;
-}
-
-th, td {
-  padding: 10px;
-  text-align: center;
-}
-
-/* Diagrams */
-.diagram {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.diagram .box {
-  padding: 1rem 2rem;
-  background: #1f1f3a;
-  border: 2px solid #f9d342;
-  border-radius: 10px;
-  margin: 0 1rem;
-}
-
-.diagram .arrow {
-  font-size: 2rem;
-  color: #f9d342;
-}
-
-/* Buttons */
-button {
-  background-color: #f9d342;
-  color: #0b0c1e;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 1rem;
-  transition: transform 0.2s, background 0.2s;
-}
-
-button:hover {
-  transform: scale(1.05);
-  background-color: #ffd166;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #aaa;
-  border-top: 1px solid #444;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  section h2 {
-    font-size: 1.5rem;
-  }
-
-  .diagram {
-    flex-direction: column;
-  }
-
-  .diagram .arrow {
-    transform: rotate(90deg);
-    margin: 1rem 0;
-  }
-}
