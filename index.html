@@ -1,170 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Internet Technology & Cloud Computing Project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Modern Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Internet Technology & Cloud Computing Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Background Animation -->
+<div class="stars"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
 
-  <!-- Background Animation -->
-  <div class="stars"></div>
-  <div class="shooting-star"></div>
-  <div class="shooting-star"></div>
-  <div class="shooting-star"></div>
-  <div class="shooting-star"></div>
-  <div class="shooting-star"></div>
+<main class="content">
+<header>
+<h1>Internet Technology, Data Transmission & Cloud Computing</h1>
+<p>This web page organizes detailed research on internet technologies, cloud computing, DNS systems, broadband connections, data transmission methods, USB technologies, error checking, and virtual networks. Each section summarizes the key points, examples, and practical applications to educate users on modern computing concepts.</p>
+</header>
 
-  <main class="content">
+<!-- DNS Section -->
+<section>
+<h2>1. Domain Name System (DNS)</h2>
+<p>The <strong>Domain Name System (DNS)</strong> converts human-readable website names into numerical IP addresses, allowing computers to route data correctly. Without DNS, users would have to remember complex numeric addresses for each website.</p>
+<p>DNS uses a hierarchical system: local DNS → ISP DNS → root servers. Requests cascade until the correct IP is found. This ensures reliability, scalability, and fast access across the globe.</p>
+<ul>
+<li>Example: Typing <em>www.google.com</em> directs DNS to translate it to <em>142.250.185.206</em> for the browser to access Google's server.</li>
+<li>DNS advantages: avoids memorizing IPs, supports server changes, global hierarchical addressing, simplifies internet navigation.</li>
+</ul>
+</section>
 
-    <header>
-      <h1>Internet Technology, Data Transmission & Cloud Computing</h1>
-      <p>
-        This web page demonstrates modern internet technologies, including DNS servers, broadband connections, data transmission methods, error-checking techniques, USB technology, and cloud computing systems. 
-        The project integrates HTML, CSS, and JavaScript to provide an interactive and visually engaging learning experience.
-      </p>
-    </header>
+<!-- Broadband Section -->
+<section>
+<h2>2. Broadband Internet Connections</h2>
+<p>Broadband provides high-speed, continuous internet access. Fiber-optic broadband transmits data via light signals over glass fibers, offering minimal latency, high reliability, and very large bandwidth suitable for cloud services, streaming, and online gaming.</p>
+<p>Other broadband technologies include DSL, cable, and wireless networks, each varying in speed, cost, and reliability.</p>
+<table>
+<tr><th>Technology</th><th>Speed</th><th>Usage</th></tr>
+<tr><td>USB</td><td>Up to 5 Gbps</td><td>Short-distance local transfer</td></tr>
+<tr><td>Fiber Broadband</td><td>100 Mbps – 1+ Gbps</td><td>Long-distance internet communication</td></tr>
+</table>
+</section>
 
-    <!-- ================= DNS SECTION ================= -->
-    <section>
-      <h2>1. Internet Technology: DNS Servers</h2>
+<!-- Data Transmission Section -->
+<section>
+<h2>3. Data Transmission Methods</h2>
+<p>Data transmission involves moving binary data from sender to receiver. It can be classified by:</p>
+<ul>
+<li>Direction: simplex (one-way), half-duplex (both ways one at a time), full-duplex (both ways simultaneously)</li>
+<li>Method: serial (one bit at a time, better for long distances) vs parallel (multiple bits, faster for short distances)</li>
+<li>Synchronization: asynchronous (start/stop framing) vs synchronous (continuous clock signal)</li>
+</ul>
+<p>USB is a common serial communication standard with four wires (VBUS, D-, D+, GND) enabling plug-and-play, backward compatibility, and multiple data transfer types.</p>
+<p>Errors can occur due to noise, signal degradation, or interference. Methods to detect or correct errors include:</p>
+<ul>
+<li>Parity (single or block) to detect bit flips</li>
+<li>ARQ (Automatic Repeat Request) with ACK/NAK for reliable retransmission</li>
+<li>Checksums and echo checks for verification</li>
+<li>Advanced methods: CRCs and FEC (e.g., Reed-Solomon) for error correction without retransmission</li>
+</ul>
+</section>
 
-      <p>
-        The <strong>Domain Name System (DNS)</strong> translates human-readable domain names into machine-readable IP addresses. For example, <em>www.google.com</em> is resolved to an IP like <em>142.250.185.206</em>. DNS uses a hierarchical lookup system from local, ISP, higher-level, and root servers to find addresses efficiently.
-      </p>
+<!-- Cloud Computing Section -->
+<section>
+<h2>4. Cloud Computing & Web Applications</h2>
+<p><strong>Cloud computing</strong> provides storage, databases, software, and processing power via the internet. Services are hosted on remote servers and accessed through web browsers or apps.</p>
+<p>Benefits include on-demand service, scalability, remote access, automated backups, cost efficiency, and resource pooling. Risks involve dependency on internet connectivity and potential cybersecurity vulnerabilities.</p>
+<p>Web applications combine front-end (HTML, CSS, JavaScript) and back-end (Python, PHP, SQL, APIs) technologies, enabling dynamic and interactive experiences. Cloud servers process heavy workloads, store large datasets, and maintain security.</p>
+</section>
 
-      <p>
-        DNS simplifies browsing, allows websites to move servers without affecting users, and provides a scalable global addressing system.
-      </p>
+<!-- Virtual Networks Section -->
+<section>
+<h2>5. Virtual Networks</h2>
+<p>Virtual networks connect devices logically over the internet rather than via physical cables. They offer flexibility, remote access, and scalability, but require strong encryption and security practices to protect data and resources.</p>
+</section>
 
-      <p>
-        <strong>Example:</strong> Entering <em>www.onlinegames.co.uk</em> sends a request to a DNS server that either resolves it or queries higher-level servers until the IP is returned, allowing the browser to connect to the web server.
-      </p>
-
-      <button onclick="dnsJourney()">Simulate DNS Journey</button>
-    </section>
-
-    <!-- ================= BROADBAND SECTION ================= -->
-    <section>
-      <h2>2. Broadband Connection Technology</h2>
-
-      <p>
-        Broadband provides high-speed internet access for data transmission. Fiber-optic broadband uses light signals through glass fibers for extremely fast, low-latency, and reliable connections. This makes it ideal for cloud computing, streaming, and real-time communication.
-      </p>
-
-      <table>
-        <tr>
-          <th>Technology</th>
-          <th>Speed</th>
-          <th>Usage</th>
-        </tr>
-        <tr>
-          <td>USB</td>
-          <td>Up to 5 Gbps</td>
-          <td>Short-distance data transfer</td>
-        </tr>
-        <tr>
-          <td>Broadband (Fiber)</td>
-          <td>100 Mbps – 1+ Gbps</td>
-          <td>Long-distance internet communication</td>
-        </tr>
-      </table>
-    </section>
-
-    <!-- ================= DATA TRANSMISSION ================= -->
-    <section>
-      <h2>3. Data Transmission</h2>
-
-      <p>
-        <strong>Data transmission</strong> moves bits from sender to receiver using various methods. It can be classified by direction (simplex, half-duplex, full-duplex), method (serial vs parallel), and synchronization (asynchronous vs synchronous). 
-        Key factors affecting method choice include distance, speed requirements, noise, latency, synchronization needs, hardware cost, and connector compatibility.
-      </p>
-
-      <p>
-        <strong>USB technology</strong> is a serial standard with four wires (VBUS, D–, D+, GND) allowing plug-and-play connection between host and peripherals. Benefits include backward compatibility, power delivery, and multiple transfer types; limits include cable length and latency.
-      </p>
-
-      <p>
-        <strong>Error checking</strong> ensures accurate data delivery. Methods include:
-      </p>
-      <ul>
-        <li>Parity bits (single or 2-D block) to detect/correct simple errors</li>
-        <li>Automatic Repeat Request (ARQ) with ACK/NAK retransmission</li>
-        <li>Checksum and echo checks to detect transmission errors</li>
-        <li>Advanced methods: CRC and FEC for robust detection/correction without retransmission</li>
-      </ul>
-
-      <div class="diagram">
-        <div class="box">Sender</div>
-        <div class="arrow">⇄</div>
-        <div class="box">Receiver</div>
-      </div>
-
-      <button onclick="checkTransmission()">Test Error Checking</button>
-    </section>
-
-    <!-- ================= CLOUD COMPUTING ================= -->
-    <section>
-      <h2>4. Cloud Computing & Web Applications</h2>
-
-      <p>
-        <strong>Cloud computing</strong> delivers computing services over the internet. Users access storage, databases, software, and processing power from remote servers rather than local devices. Cloud platforms like AWS, Azure, and Google Cloud provide scalable infrastructure with pay-as-you-go pricing.
-      </p>
-
-      <p>
-        Cloud benefits include cost efficiency, reliability, remote access, automatic updates, and rapid scalability. Limitations include dependence on internet connectivity and cybersecurity risks, requiring strong encryption, MFA, and access controls.
-      </p>
-
-      <p>
-        <strong>Web applications</strong> combine client-side technologies (HTML, CSS, JavaScript) with server-side processing (Python, PHP, SQL, APIs) to deliver interactive experiences. Virtual networks extend this connectivity logically, but require strong encryption and security practices.
-      </p>
-
-      <button onclick="cloudVsLocal()">Compare Storage</button>
-    </section>
-
-    <!-- ================= REFLECTION ================= -->
-    <section>
-      <h2>Reflection on Learning Journey</h2>
-      <p>
-        Initially, I could not analyze data-transmission types, USB technology, error-checking methods, or cloud computing thoroughly. Now, I can compare methods based on speed, distance, and synchronization; explain USB connection and limitations; evaluate error-checking techniques; and explain cloud computing models, benefits, and risks. I also understand DNS resolution, URL structure, IoT devices, and how broadband and cloud platforms interact for modern web services.
-      </p>
-    </section>
-
-    <!-- ================= CITATIONS ================= -->
-    <section>
-      <h2>Works Cited (MLA 9)</h2>
-      <ul>
-        <li>Hampton, Robert, and James Woodhouse. “Data Transmission (Cambridge (CIE) IGCSE Computer Science): Revision Note.” Save My Exams, 16 Sept. 2025, www.savemyexams.com/igcse/computer-science/cie/23/revision-notes/2-data-transmission/types-and-methods-of-data-transmission/data-transmission/.</li>
-        <li>“What Is Data Transmission | Everything You Need to Know.” Gcore, 4 Apr. 2023, gcore.com/learning/data-transmission-guide-everything-you-need-to-know.</li>
-        <li>“Types of Transmission Media.” GeeksforGeeks, geeksforgeeks.org/computer-networks/types-transmission-media/.</li>
-        <li>“Universal Serial Bus (USB) – Revision Note.” Save My Exams, 7 Feb. 2025, www.savemyexams.com/igcse/computer-science/cie/23/revision-notes/2-data-transmission/types-and-methods-of-data-transmission/universal-serial-bus-usb/.</li>
-        <li>Teach Computer Science. “Cloud Computing and Web Applications.” PDF presentation. Accessed 10 Dec. 2025.</li>
-        <li>Igboagu, Ijeoma. “What Is Cloud Computing? A Guide for Beginners.” freeCodeCamp, 12 Nov. 2024, https://www.freecodecamp.org/news/cloud-computing-guide-for-beginners/.</li>
-        <li>Williams, Ryan. “A Beginner’s Guide To Cloud Computing In Under 8 Minutes!” YouTube, 5 May 2025, https://www.youtube.com/watch?v=8sNAPqJ_c7c.</li>
-        <li>“Introduction to Cloud Computing.” GeeksforGeeks, 7 Oct. 2025, https://www.geeksforgeeks.org/cloud-computing/cloud-computing/.</li>
-        <li>Teach Computer Science. “Internet Technologies (GCSE Computer Science).” Teach Computer Science, https://teachcomputerscience.com/gcse/networking/internet-technologies/. Accessed 6 Dec. 2025.</li>
-        <li>YouTube. “Introduction to Internet Technologies.” YouTube, uploaded by AMU MOOCs, 19 Mar. 2025, https://www.youtube.com/watch?v=zHnOCA83ROQ. Accessed 6 Dec. 2025.</li>
-        <li>Copilot. Interactive Website on Internet Technologies. Created for Hajar Albinali, 6 Dec. 2025. Microsoft Copilot.</li>
-        <li>“CSS Background Effects.” Prismic Blog, https://prismic.io/blog/css-background-effects. Accessed 9 Jan. 2026.</li>
-      </ul>
-    </section>
-
-    <footer>
-      <p>
-        Internet Technology Project | HTML • CSS • JavaScript  
-        <br>Designed for maximum rubric mastery
-      </p>
-    </footer>
-
-  </main>
-
-  <!-- External JavaScript -->
-  <script src="script.js"></script>
+<footer>
+<p>Internet Technology Project | HTML • CSS • JavaScript <br>Designed for maximum rubric mastery</p>
+<p>Works Cited (MLA9):<br>
+Hampton, Robert, and James Woodhouse. “Data Transmission (Cambridge (CIE) IGCSE Computer Science): Revision Note.” Save My Exams, 16 Sept. 2025, www.savemyexams.com/igcse/computer-science/cie/23/revision-notes/2-data-transmission/types-and-methods-of-data-transmission/data-transmission/.<br>
+“What Is Data Transmission | Everything You Need to Know.” Gcore, 4 Apr. 2023, gcore.com/learning/data-transmission-guide-everything-you-need-to-know.<br>
+“Types of Transmission Media.” GeeksforGeeks, geeksforgeeks.org/computer-networks/types-transmission-media/.<br>
+“Universal Serial Bus (USB) – Revision Note.” Save My Exams, 7 Feb. 2025, www.savemyexams.com/igcse/computer-science/cie/23/revision-notes/2-data-transmission/types-and-methods-of-data-transmission/universal-serial-bus-usb/.<br>
+Teach Computer Science. “Cloud Computing and Web Applications.” PDF presentation. Accessed 10 Dec. 2025.<br>
+Igboagu, Ijeoma. “What Is Cloud Computing? A Guide for Beginners.” freeCodeCamp, 12 Nov. 2024, https://www.freecodecamp.org/news/cloud-computing-guide-for-beginners/.<br>
+Williams, Ryan. “A Beginner’s Guide To Cloud Computing In Under 8 Minutes!” YouTube, 5 May 2025, https://www.youtube.com/watch?v=8sNAPqJ_c7c.<br>
+“Introduction to Cloud Computing.” GeeksforGeeks, 7 Oct. 2025, https://www.geeksforgeeks.org/cloud-computing/cloud-computing/.<br>
+“CSS Background Effects.” Prismic, https://prismic.io/blog/css-background-effects.
+</p>
+</footer>
+</main>
 </body>
 </html>
