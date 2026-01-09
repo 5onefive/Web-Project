@@ -1,124 +1,187 @@
-/* Reset & Box Sizing */
-* {
+/* =========================
+   STYLE.CSS
+   Internet Technology & Cloud Computing Project
+   Shooting Stars Background adapted from:
+   https://prismic.io/blog/css-background-effects
+============================= */
+
+/* General body styles */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-  color: #f5f5f5;
+  background-color: #0b0c1e; /* dark night sky */
+  color: #e0e0e0;
   overflow-x: hidden;
 }
 
-/* =================== Stars =================== */
-.stars, .stars::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  background: white;
-  animation: twinkle 8s infinite linear;
-}
+/* =========================
+   BACKGROUND STARS
+============================= */
 .stars {
-  box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white, 22vw 22vh 1px white,
-              28vw 12vh 2px white, 32vw 32vh 1px white, 38vw 18vh 2px white, 42vw 35vh 1px white,
-              48vw 25vh 2px white, 53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
-              68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white, 83vw 48vh 1px white,
-              88vw 20vh 2px white, 93vw 52vh 1px white, 98vw 35vh 2px white, 5vw 60vh 1px white,
-              12vw 65vh 2px white, 18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
-              35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white, 50vw 75vh 1px white,
-              55vw 88vh 2px white, 60vw 95vh 1px white, 65vw 72vh 2px white, 70vw 85vh 1px white,
-              75vw 78vh 2px white, 80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
-              95vw 75vh 2px white;
-}
-.stars::after {
-  box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white, 33vw 15vh 1px white,
-              41vw 28vh 2px white, 49vw 35vh 1px white, 57vw 22vh 2px white, 65vw 42vh 1px white,
-              73vw 28vh 2px white, 81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
-              3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white, 27vw 88vh 1px white,
-              35vw 72vh 2px white, 43vw 85vh 1px white, 51vw 92vh 2px white, 59vw 78vh 1px white;
-  animation: twinkle 6s infinite linear reverse;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 2px 2px;
 }
 
-/* Shooting Stars */
 .shooting-star {
   position: absolute;
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(90deg, white, transparent);
-  animation: shoot 3s infinite ease-in;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(white, transparent);
+  top: -100px;
+  left: 50%;
+  transform: rotate(-45deg);
+  animation: shoot 3s linear infinite;
+  opacity: 0.8;
+  z-index: -1;
 }
-.shooting-star:nth-child(1) { top: 20%; left: -100px; animation-delay: 0s; }
-.shooting-star:nth-child(2) { top: 35%; left: -100px; animation-delay: 1s; }
-.shooting-star:nth-child(3) { top: 50%; left: -100px; animation-delay: 2s; }
-.shooting-star:nth-child(4) { top: 65%; left: -100px; animation-delay: 3s; }
-.shooting-star:nth-child(5) { top: 80%; left: -100px; animation-delay: 4s; }
 
-/* =================== Animations =================== */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 0.4; }
-}
+.shooting-star:nth-child(2) { animation-delay: 1s; left: 20%; height: 100px; }
+.shooting-star:nth-child(3) { animation-delay: 2s; left: 75%; height: 120px; }
+.shooting-star:nth-child(4) { animation-delay: 3s; left: 40%; height: 90px; }
+.shooting-star:nth-child(5) { animation-delay: 4s; left: 10%; height: 110px; }
 
 @keyframes shoot {
-  0% { transform: translateX(0) translateY(0) rotate(25deg); opacity: 1; }
-  100% { transform: translateX(120vw) translateY(50vh) rotate(25deg); opacity: 0; }
+  0% { transform: translateY(0) rotate(-45deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(1000px) translateX(-500px) rotate(-45deg); opacity: 0; }
 }
 
-/* =================== Main Content =================== */
-main.content {
-  max-width: 1200px;
+/* =========================
+   MAIN CONTENT STYLES
+============================= */
+.content {
+  max-width: 1100px;
   margin: 0 auto;
   padding: 2rem;
-  z-index: 2;
-  position: relative;
 }
 
+/* Header */
 header h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #ffd700;
-  text-shadow: 1px 1px 4px #000;
+  color: #f9d342; /* golden */
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Sections */
+section {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 section h2 {
   font-size: 2rem;
-  margin: 1.5rem 0 1rem 0;
-  color: #1e90ff;
-  border-bottom: 2px solid #1e90ff;
-  padding-bottom: 0.25rem;
-}
-
-section p, section ul, section table {
+  color: #00e5ff; /* cyan */
   margin-bottom: 1rem;
-  line-height: 1.7;
-  font-size: 1.1rem;
+  border-bottom: 2px solid #00e5ff;
+  padding-bottom: 0.5rem;
 }
 
+section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Tables */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+table, th, td {
+  border: 1px solid #00e5ff;
 }
 
 th, td {
-  border: 1px solid #f5f5f5;
-  padding: 0.5rem;
-  text-align: left;
+  padding: 10px;
+  text-align: center;
 }
 
-th {
-  background-color: #1e90ff;
-  color: white;
+/* Diagrams */
+.diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
+.diagram .box {
+  padding: 1rem 2rem;
+  background: #1f1f3a;
+  border: 2px solid #f9d342;
+  border-radius: 10px;
+  margin: 0 1rem;
+}
+
+.diagram .arrow {
+  font-size: 2rem;
+  color: #f9d342;
+}
+
+/* Buttons */
+button {
+  background-color: #f9d342;
+  color: #0b0c1e;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #ffd166;
+}
+
+/* Footer */
 footer {
   text-align: center;
-  margin-top: 3rem;
-  padding: 1rem;
+  padding: 2rem;
   font-size: 0.9rem;
-  border-top: 1px solid #f5f5f5;
+  color: #aaa;
+  border-top: 1px solid #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .diagram {
+    flex-direction: column;
+  }
+
+  .diagram .arrow {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+  }
 }
